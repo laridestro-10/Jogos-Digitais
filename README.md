@@ -4,8 +4,8 @@ Jogo de parkour em terceira pessoa, no estilo dos obbies do Roblox, feito na **U
 
 Tudo acontece em **uma única cena** (`Scenes/Parkour/Parkour.unity`): menu, jogo, pausa, game over e vitória são telas que ligam e desligam, sem troca de cena.
 
-- **Equipe:** (preencher os nomes)
-- **Disciplina / professor:** (preencher)
+- **Equipe:** André, Larissa, Murilo e Valeska
+- **Disciplina / professor:** Jogos Digitais
 - **IA utilizada no desenvolvimento:** Claude (Anthropic). O registro dos prompts está no documento de análise de prompts entregue junto.
 
 ---
