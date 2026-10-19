@@ -1,0 +1,57 @@
+PARKOUR NAS ALTURAS - OBBY (estilo Roblox)
+
+Cenas (File > Build Profiles, nessa ordem):
+  1. Menu         -> titulo, Jogar, Sair e recorde
+  2. Obby         -> o jogo completo (7 fases, seguindo o mapa do desenho)
+  3. SampleScene  -> cena original da equipe (fora do fluxo do jogo)
+
+Fases (zona do desenho):
+  Zona 4  Fase 1  Blocos sobre a lava (encostou na lava, volta)
+          Fase 2  A curva de tabuas
+  Zona 3  Fase 3  Bolinhas em zigue-zague
+          Fase 4  Postes + barra giratoria + trampolim
+  Zona 2  Fase 5  Aneis (usa o TorusGenerator da equipe)
+          Fase 6  Barras, algumas se mexem
+  Zona 1  Fase 7  Ponte de vidro: so um vidro por coluna e verdadeiro.
+                  Sequencia 3 2 3 3 2 1 1 (linha 1 = mais perto da tela).
+                  Os cubinhos brancos no comeco mostram o numero de cada linha.
+  Fim     Chegada (laranja) -> tela de vitoria
+
+Controles: WASD anda, Espaco pula, botao direito do mouse (ou Q/E) gira a camera,
+           rodinha da zoom, Esc pausa.
+Opcoes (menu e pausa): volume da musica, volume dos efeitos, sensibilidade da camera
+           e tela cheia. Fica salvo no computador (Configuracoes.cs).
+
+Scripts (Assets/Zona3):
+  Personagem.cs      anda na direcao da camera, pula (com ajuda), vira o modelo, sons
+  CameraSegue.cs     camera em terceira pessoa com mouse, Q/E e zoom
+  AnimacaoBoneco.cs  balanca bracos e pernas do boneco quando anda
+  HUD.cs             moedas, tempo, fase, mortes, checkpoint, sons, musica, pausa, vitoria
+                     (outros scripts acham ele com HUD.instancia)
+  Checkpoint.cs      pisou = novo ponto de volta e avanca a fase
+  Perigo.cs          lava / barra giratoria: encostou, volta pro checkpoint
+  Trampolim.cs       joga o Player para cima
+  PlataformaMovel.cs vai e volta e carrega o Player
+  Girar.cs           gira sem parar
+  Moeda.cs           gira e soma no placar
+  Configuracoes.cs   opcoes salvas (volume, sensibilidade, tela cheia)
+  OpcoesUI.cs        tela de opcoes
+  Transicao.cs       fade preto entre as cenas
+  BotaoAnimado.cs    botoes crescem no hover e fazem som
+  Flutuar.cs / Confete.cs / CameraMenu.cs  animacoes da interface e do menu
+  Chegada.cs         fim do mapa -> hud.Vencer()
+  MenuPrincipal.cs   botoes do menu e recorde
+  (VoltarAoInicio.cs so e usado na SampleScene)
+
+Sons e musica: Assets/Zona3/Sons (feitos do zero, sem direitos autorais).
+
+TROCAR O PERSONAGEM (so o visual):
+  O boneco de blocos fica no filho "Modelo" (com o script AnimacaoBoneco).
+  1. Na Hierarchy, abra Player e apague o filho "Modelo".
+  2. Arraste o modelo novo para dentro de Player (pes em Y = -1).
+  3. Selecione Player e arraste o modelo para o campo "Modelo" do Personagem.
+
+DICAS PARA MEXER NO MAPA:
+  Tudo fica dentro do objeto "Obby", separado por fase. Pode mover, duplicar
+  (Ctrl+D) e trocar cores arrastando os materiais de Assets/Zona3/Materiais.
+  Vidro falso = BoxCollider com "Is Trigger" marcado (o Player atravessa).

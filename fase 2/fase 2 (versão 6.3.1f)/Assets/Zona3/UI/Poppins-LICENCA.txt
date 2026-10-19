@@ -1,0 +1,4 @@
+Fonte Poppins (Poppins-Bold.ttf)
+Copyright 2020 The Poppins Project Authors (https://github.com/itfoundry/Poppins)
+Licenciada sob a SIL Open Font License, Version 1.1 - https://openfontlicense.org
+Pode ser usada, incluida e distribuida em jogos, inclusive comerciais.
